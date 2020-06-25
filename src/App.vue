@@ -10,8 +10,8 @@ import Home from "@/components/Home.vue";
 export default {
   name: "App",
   components: {
-    Home
-  }
+    Home,
+  },
 };
 </script>
 
@@ -46,5 +46,15 @@ body {
   font-size: 1.8rem;
   font-weight: 400;
   line-height: 1.7;
+}
+
+a {
+  color: #b42326;
+  text-decoration: none;
+
+  &:hover {
+    cursor: pointer;
+    font-weight: bold;
+  }
 }
 </style>

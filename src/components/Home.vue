@@ -7,6 +7,50 @@
       <div class="card__button">
         <button class="btn btn__primary">Get Quote</button>
       </div>
+      <div>
+        <div id="copyright" class="credits">
+          &#169; {{ new Date().getFullYear() }}
+          <span
+            >Created by Chuck Smith -
+            <a
+              href="https://eclecticsaddlebag.com"
+              target="_blank"
+              rel="noreferrer nofollow"
+              >Blog</a
+            >
+            -
+            <a
+              href="https://chucksmith.dev"
+              target="_blank"
+              rel="noreferrer nofollow"
+              >Portfolio</a
+            >
+          </span><br />
+          <span class="credits">
+            <a
+              href="https://twitter.com/EclecticCoding"
+              target="_blank"
+              rel="noopener nofollow"
+            >
+              Twitter
+            </a>
+            |
+            <a
+              href="https://www.linkedin.com/in/dev-chuck-smith/"
+              target="_blank"
+              rel="noopener nofollow"
+              >LinkedIn</a
+            >
+            |
+            <a
+              href="https://github.com/eclectic-coding"
+              target="_blank"
+              rel="noopener nofollow"
+              >GitHub</a
+            >
+          </span>
+        </div>
+      </div>
     </div>
   </main>
 </template>
@@ -18,18 +62,18 @@ export default {
   name: "Home",
   data() {
     return {
-      quoteData: []
+      quoteData: [],
     };
   },
   created() {
     QuoteService.getQuote()
-      .then(response => {
+      .then((response) => {
         this.quoteData = response.data.quote;
       })
-      .catch(error => {
+      .catch((error) => {
         console.log("These was an error:" + error);
       });
-  }
+  },
 };
 </script>
 
