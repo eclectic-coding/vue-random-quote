@@ -5,7 +5,9 @@
       <div class="card__quote">{{ quoteData.quoteText }}</div>
       <div class="card__author">{{ quoteData.quoteAuthor }}</div>
       <div class="card__button">
-        <button class="btn btn__primary">Get Quote</button>
+        <button v-on:click="newQuote" class="btn btn__primary">
+          Get Quote
+        </button>
       </div>
       <div>
         <div id="copyright" class="credits">
@@ -24,8 +26,8 @@
               target="_blank"
               rel="noreferrer nofollow"
               >Portfolio</a
-            >
-          </span><br />
+            > </span
+          ><br />
           <span class="credits">
             <a
               href="https://twitter.com/EclecticCoding"
@@ -65,14 +67,19 @@ export default {
       quoteData: [],
     };
   },
+  methods: {
+    newQuote: function () {
+      QuoteService.getQuote()
+        .then((response) => {
+          this.quoteData = response.data.quote;
+        })
+        .catch((error) => {
+          console.log("These was an error:" + error);
+        });
+    },
+  },
   created() {
-    QuoteService.getQuote()
-      .then((response) => {
-        this.quoteData = response.data.quote;
-      })
-      .catch((error) => {
-        console.log("These was an error:" + error);
-      });
+    this.newQuote();
   },
 };
 </script>
