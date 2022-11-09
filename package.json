@@ -10,7 +10,7 @@
   "dependencies": {
     "axios": "^0.27.2",
     "core-js": "^3.26.0",
-    "vue": "^2.7.13"
+    "vue": "^2.7.14"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~5.0.8",
@@ -24,6 +24,6 @@
     "prettier": "^2.7.1",
     "sass": "^1.56.1",
     "sass-loader": "^13.1.0",
-    "vue-template-compiler": "^2.7.13"
+    "vue-template-compiler": "^2.7.14"
   }
 }
